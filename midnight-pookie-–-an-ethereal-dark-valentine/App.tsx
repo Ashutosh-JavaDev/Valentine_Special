@@ -8,11 +8,10 @@ import VibeNoise from './components/VibeNoise';
 import FloatingAssets from './components/FloatingAssets';
 import { CHAPTERS } from './constants';
 
-const App: React.FC = () => {
+const App = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // Simulate initial loading for a cinematic feel
     const timer = setTimeout(() => setIsLoaded(true), 1500);
     return () => clearTimeout(timer);
   }, []);
@@ -36,7 +35,8 @@ const App: React.FC = () => {
       <VibeNoise />
       <FloatingAssets />
       
-      <Hero />
+      {/* Pass your image URL here */}
+      <Hero backgroundImage="/path/to/your/image.jpg" />
 
       {CHAPTERS.map((chapter, index) => (
         <React.Fragment key={chapter.category}>

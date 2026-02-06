@@ -17,7 +17,7 @@ const Finale = () => {
       particleCount: 150,
       spread: 70,
       origin: { y: 0.6 },
-      colors: ['#FB7185', '#FDE047', '#4C0519']
+      colors: ['#FB7185', '#FDE047', '#4D0519']
     });
   };
 

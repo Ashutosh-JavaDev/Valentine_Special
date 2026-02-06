@@ -1,11 +1,27 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Heart } from 'lucide-react';
 
-const Hero: React.FC = () => {
+interface HeroProps {
+  backgroundImage?: string;
+}
+
+const Hero = ({ backgroundImage }: HeroProps = {}) => {
   return (
     <section className="h-screen flex flex-col items-center justify-center relative overflow-hidden bg-gradient-to-b from-black via-[#020617] to-[#4C0519]">
+      {/* Full Screen Background Image */}
+      {backgroundImage && (
+        <div className="absolute inset-0 w-full h-full">
+          <img 
+            src={backgroundImage} 
+            alt="Hero background" 
+            className="w-full h-full object-cover"
+          />
+          {/* Dark overlay for better text readability */}
+          <div className="absolute inset-0 bg-black/50" />
+        </div>
+      )}
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -29,21 +45,23 @@ const Hero: React.FC = () => {
         >
           Our Story in the <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FB7185] to-[#4C0519]">Shadows & Stars</span>
-          </motion.h1>
+        </motion.h1>
       </motion.div>
 
       <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 2 }}
-        className="absolute bottom-12 flex flex-col items-center gap-2 cursor-pointer"
+        className="absolute bottom-12 flex flex-col items-center gap-2 cursor-pointer z-10"
         onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
       >
         <span className="text-[#FDE047] text-xs uppercase tracking-[0.4em] font-semibold opacity-60">Begin the Journey</span>
         <Heart className="text-[#FDE047] fill-[#FDE047]" size={24} />
       </motion.div>
 
-      {/* Background Ambience */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-rose-900/10 via-transparent to-transparent opacity-50" />
+      {/* Background Ambience - only show if no background image */}
+      {!backgroundImage && (
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-rose-900/10 via-transparent to-transparent opacity-50" />
+      )}
     </section>
   );
 };
