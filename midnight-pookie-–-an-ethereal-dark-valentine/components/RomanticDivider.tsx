@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { TeddyIcon, ChocolateBoxIcon } from './FloatingAssets';
@@ -8,7 +7,8 @@ interface RomanticDividerProps {
   assetType: 'teddy' | 'chocolate';
 }
 
-const RomanticDivider: React.FC<RomanticDividerProps> = ({ text, assetType }) => {
+// Fix: Remove React.FC type annotation and explicitly type the props parameter
+const RomanticDivider = ({ text, assetType }: RomanticDividerProps) => {
   return (
     <section className="h-screen flex items-center justify-center relative bg-[#020617] overflow-hidden">
       <div className="absolute inset-0 flex items-center justify-center opacity-10">

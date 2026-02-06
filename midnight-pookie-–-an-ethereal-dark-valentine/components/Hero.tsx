@@ -29,7 +29,7 @@ const Hero: React.FC = () => {
         >
           Our Story in the <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FB7185] to-[#4C0519]">Shadows & Stars</span>
-        </h1 >
+          </motion.h1>
       </motion.div>
 
       <motion.div
