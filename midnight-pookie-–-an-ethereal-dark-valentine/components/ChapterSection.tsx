@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Chapter, ImageItem } from '../types';
@@ -8,7 +7,17 @@ interface ChapterSectionProps {
   index: number;
 }
 
-const ChapterSection: React.FC<ChapterSectionProps> = ({ chapter, index }) => {
+interface ImageCardProps {
+  image: ImageItem;
+  index: number;
+}
+
+interface ImagesProps {
+  images: ImageItem[];
+}
+
+// Fix: Remove React.FC and add explicit parameter types
+const ChapterSection = ({ chapter, index }: ChapterSectionProps) => {
   return (
     <section className="py-24 px-4 md:px-12 bg-slate-950">
       <div className="max-w-7xl mx-auto">
@@ -32,7 +41,8 @@ const ChapterSection: React.FC<ChapterSectionProps> = ({ chapter, index }) => {
   );
 };
 
-const ImageCard: React.FC<{ image: ImageItem; index: number }> = ({ image, index }) => {
+// Fix: Remove React.FC and add explicit parameter types
+const ImageCard = ({ image, index }: ImageCardProps) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -55,7 +65,8 @@ const ImageCard: React.FC<{ image: ImageItem; index: number }> = ({ image, index
   );
 };
 
-const MasonryGrid: React.FC<{ images: ImageItem[] }> = ({ images }) => (
+// Fix: Remove React.FC and add explicit parameter types
+const MasonryGrid = ({ images }: ImagesProps) => (
   <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
     {images.map((img, idx) => (
       <div key={img.id} className="break-inside-avoid">
@@ -65,7 +76,8 @@ const MasonryGrid: React.FC<{ images: ImageItem[] }> = ({ images }) => (
   </div>
 );
 
-const CarouselLayout: React.FC<{ images: ImageItem[] }> = ({ images }) => (
+// Fix: Remove React.FC and add explicit parameter types
+const CarouselLayout = ({ images }: ImagesProps) => (
   <div className="flex overflow-x-auto gap-6 pb-12 scrollbar-hide snap-x snap-mandatory px-4 -mx-4">
     {images.map((img, idx) => (
       <motion.div
@@ -80,7 +92,8 @@ const CarouselLayout: React.FC<{ images: ImageItem[] }> = ({ images }) => (
   </div>
 );
 
-const StackLayout: React.FC<{ images: ImageItem[] }> = ({ images }) => (
+// Fix: Remove React.FC and add explicit parameter types
+const StackLayout = ({ images }: ImagesProps) => (
   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
     {images.map((img, idx) => (
       <motion.div
