@@ -1,15 +1,15 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import confetti from 'https://cdn.skypack.dev/canvas-confetti';
 import { Gift } from 'lucide-react';
 
-const Finale: React.FC = () => {
+// Declare confetti as a global function
+declare const confetti: any;
+const Finale = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isYes, setIsYes] = useState(false);
   const [noButtonPos, setNoButtonPos] = useState({ x: 0, y: 0 });
   const [noScale, setNoScale] = useState(1);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef(null);
 
   const handleYes = () => {
     setIsYes(true);
@@ -27,7 +27,9 @@ const Finale: React.FC = () => {
         const y = Math.random() * 200 - 100;
         setNoButtonPos({ x, y });
     } else {
-        setNoScale(prev => Math.max(0.2, prev - 0.2));
+        // Fix: Use direct value instead of functional update
+        const newScale = Math.max(0.2, noScale - 0.2);
+        setNoScale(newScale);
     }
   };
 
