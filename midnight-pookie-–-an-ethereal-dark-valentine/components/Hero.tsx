@@ -13,12 +13,12 @@ const Hero = ({ backgroundImage }: HeroProps = {}) => {
       {backgroundImage && (
         <div className="absolute inset-0 w-full h-full">
           <img 
-            src={backgroundImage} 
+            src={"/hero.jpg"} 
             alt="Hero background" 
             className="w-full h-full object-cover"
           />
           {/* Dark overlay for better text readability */}
-          <div className="absolute inset-0 bg-black/50" />
+          <div className="absolute inset-0 bg-black/20" />
         </div>
       )}
 

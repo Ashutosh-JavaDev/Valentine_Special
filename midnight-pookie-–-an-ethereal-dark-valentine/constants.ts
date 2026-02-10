@@ -6,10 +6,23 @@ export const CHAPTERS: Chapter[] = [
     category: "The First Sparks",
     quote: "It was always you.",
     layout: 'masonry',
-    images: Array.from({ length: 15 }).map((_, i) => ({
+    images: Array.from({ length: 12 }).map((_, i) => ({
       id: i + 1,
-      url: `https://picsum.photos/seed/love${i + 1}/800/${i % 2 === 0 ? 1000 : 800}`,
-      caption: ["Where it all began...", "First coffee date", "That specific look", "Under the stars", "A shared laugh", "Silent moments", "The first touch", "A promise made", "Magic in the air", "Two souls meet"][i],
+      url: `/images/sparks/${i + 1}.jpg`,
+      caption: [
+        "Where it all began...",
+        "Collage date",
+        "That specific Meet up",
+        "Under the stars",
+        "A shared laugh",
+        "Silent moments",
+        "The First Far Bike Trip",
+        "A promise made",
+        "Magic in the air",
+        "Birthday Collabration",
+        "The Boat Ride",
+        "First Jyotiling Trip Together"
+      ][i],
       vibe: 'romantic'
     }))
   },

@@ -36,7 +36,7 @@ const App = () => {
       <FloatingAssets />
       
       {/* Pass your image URL here */}
-      <Hero backgroundImage="/path/to/your/image.jpg" />
+      <Hero backgroundImage="/bhutkifull_face.jpg" />
 
       {CHAPTERS.map((chapter, index) => (
         <React.Fragment key={chapter.category}>
