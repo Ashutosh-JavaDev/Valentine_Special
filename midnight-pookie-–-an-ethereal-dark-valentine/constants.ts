@@ -30,10 +30,10 @@ export const CHAPTERS: Chapter[] = [
     category: "Sweetest Adventures",
     quote: "Every path leads back to you.",
     layout: 'carousel',
-    images: Array.from({ length: 10 }).map((_, i) => ({
-      id: i + 11,
-      url: `https://picsum.photos/seed/travel${i + 1}/800/600`,
-      caption: ["Our first trip ✈️", "Lost in the city", "Sunset vibes", "Road trip anthems", "Mountain peaks", "Beach days", "New horizons", "Unexpected turns", "Capturing time", "Forever wandering"][i],
+    images: Array.from({ length: 12 }).map((_, i) => ({
+      id: i + 1,
+      url: `/images/adventures/${i + 1}.jpg`,
+      caption: ["Christmas Vibes", "Lost in the city", "Sunrise vibes", "Mountain peaks", "Capturing Vibes", "Tribal days", "New horizons", "Unexpected turns", "Road trip anthems", "Forever wandering","The Solo Capture","Birla Mandir Day"][i],
       vibe: 'adventure'
     }))
   },
