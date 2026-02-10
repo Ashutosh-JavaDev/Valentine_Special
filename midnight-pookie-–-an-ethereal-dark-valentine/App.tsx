@@ -53,7 +53,7 @@ const App = () => {
       <Finale />
       
       <footer className="py-12 text-center text-slate-500 font-inter text-sm tracking-widest opacity-50">
-        MIDNIGHT POOKIE EDITION • MMXXV
+        I Loveeee Youuu Meraaa Babuuuu
       </footer>
     </main>
   );

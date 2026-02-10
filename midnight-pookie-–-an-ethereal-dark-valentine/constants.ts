@@ -41,10 +41,10 @@ export const CHAPTERS: Chapter[] = [
     category: "Our Little World",
     quote: "Home is wherever I am with you.",
     layout: 'stack',
-    images: Array.from({ length: 9 }).map((_, i) => ({
-      id: i + 21,
-      url: `https://picsum.photos/seed/pookie${i + 1}/800/800`,
-      caption: ["Just us being us.", "Goofy faces", "Late night snacks", "Cozy movie nights", "Pookie time", "The best kind of lazy", "Internal jokes", "Morning rituals", "Heart-to-hearts", "Pure joy"][i],
+    images: Array.from({ length: 12 }).map((_, i) => ({
+      id: i + 1,
+      url: `/images/world/${i + 1}.jpg`,
+      caption: ["Just us being us.", "Goofy faces", "Late night snacks", "Cozy nights", "Pookie time", "The best kind of lazy", "Internal jokes", "Heart-to-Heart", "Morning Ritual", "Tired Day","Beach Day","Hideing  Window"][i],
       vibe: 'pookie'
     }))
   }
